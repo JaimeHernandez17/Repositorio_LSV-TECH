@@ -1,0 +1,31 @@
+h1{
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 36pt;
+} 
+
+body {
+    padding-left: 15px;
+}
+
+.page-header {
+    background-color: transparent;
+    width: 460px;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+
+
+li a {
+    color: green;
+    font-family: 'Ubuntu', sans-serif;
+}
+body {
+    background: white url("images/background.gif") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;;
+}
+
