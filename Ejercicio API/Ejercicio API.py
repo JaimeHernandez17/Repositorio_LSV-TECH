@@ -1,6 +1,12 @@
+# the "webbrowser" library is imported to interact with the browser and the "request" library to request
+# the data of API in "jsonplaceholder.typicode.com/"
 import webbrowser, requests
 
+# the "index" file opens with the function "open (" archive name "," in write or read mode (w or r) ")"
+# so that the file opens in writing mode
 archivo = open("index.html", "w")
+
+# "html" variable is created to save and edit the html code
 html = """<!DOCTYPE html>
 <html>
 
@@ -23,10 +29,16 @@ html = """<!DOCTYPE html>
     <hr>
     <center>
         <div class="padre">"""
+
+# the "response" variable call the function "get()" to get the data from API
 response = requests.get('https://jsonplaceholder.typicode.com/photos')
+
+# the "fotos" variable is created to get the data in a json (like a tupla) and the "agregar" variable is created
+# to generate html code with the data obtained
 fotos = response.json()
 agregar = ""
 
+# This "cycle for" calls all the data in the tuple obtained in a range of 5 data and adds them to the html archive
 for i in range(5):
     agregar += """<div class="card">
                 <img src="{}" alt="Avatar" style="width:100%">
@@ -155,6 +167,11 @@ html += """
 </body>
 
 </html>"""
+# calls the function "write()" to write on the "index" archive
 archivo.write(html)
+
+# calls the function "close()" to close the "index" archive
 archivo.close()
+
+# calls the function "open_new_tab()" from the "webbrowser" library to open "index" archive on the browser
 webbrowser.open_new_tab('index.html')
