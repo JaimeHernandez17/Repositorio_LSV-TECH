@@ -1,5 +1,6 @@
 __author__ = 'Jaime'
 
+# The framework selenium is installed to facilite
 from selenium import webdriver
 import time
 import getpass
@@ -21,11 +22,12 @@ def login_facebook(username, password, post):
     time.sleep(5)
     for button in buttons:
         if button.text == 'Compartir':
+            print(button)
             button.click()
 
 
 if __name__ == '__main__':
     username = input('Ingrese su usuario: ')
-    password = getpass.getpass('\nIngrese su contraseña: ')
+    password = getpass.getpass('\nIngrese su contrasena: ')
     post = input('\nIngrese el texto a publicar: ')
     login_facebook(username, password, post)
